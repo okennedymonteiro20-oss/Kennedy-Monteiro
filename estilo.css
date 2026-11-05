@@ -18,9 +18,92 @@
   color: #9999a5;  
 }
 
+.estrela {
+    position: fixed;
+    color: #77778f;
+    font-size: 35px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/*parte do body*/
+
+.estrela1 {
+    top: 25%;
+    right: 9%;
+}
+
+.estrela2 {
+    bottom: 5%;
+    left: 5%;
+}
+
+.estrela3 {
+    top: 65%;
+    right: 25%;
+    font-size: 20px;
+}
+
 .body{
-    background-color:#0b0f2b;
-     
+      min-height: 100vh;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 10%,
+            rgba(65, 65, 90, 0.12),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 85% 90%,
+            rgba(75, 75, 110, 0.10),
+            transparent 40%
+        ),
+        #08080a;
+
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Curva superior */
+body::before {
+     content: "";
+    position: fixed;
+
+    width: 650px;
+    height: 650px;
+
+    border: 1px solid rgba(170, 170, 200, 0.15);
+    border-radius: 50%;
+
+    top: -430px;
+    left: -100px;
+
+    pointer-events: none;
+    z-index: -1;
+
+}
+
+/* Curva inferior */
+
+body::after {
+    content: "";
+    position: fixed;
+
+    width: 950px;
+    height: 950px;
+
+    border: 1px solid rgba(170, 170, 200, 0.15);
+    border-radius: 50%;
+
+    bottom: -750px;
+    right: -300px;
+
+    pointer-events: none;
+    z-index: -1;
 }
 
 /*area de redes sociais*/
@@ -77,12 +160,12 @@ gap: 15px;
 
 /*area de habilidades*/
 .habilidades {
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 15px;
-    background-color: #292929;
-
-     transition: 0.3s ease;
+   background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #30303d;
+    border-radius: 12px;
+    padding: 25px;
+    color: #ffffff;
+    transition: 0.3s;
    
 }
 
@@ -107,21 +190,22 @@ a:hover {
 }
 
 .lista-habilidades span {
-    padding: 10px 18px;
-    border-radius: 20px;
-    background-color: #0b0f2b;
+   background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #30303d;
+    border-radius: 12px;
+    padding: 25px;
+    color: #ffffff;
+    transition: 0.3s;
 }
 
 /*area academica*/
 .academica {
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 15px;
-    background-color: #292929;
-    margin: 30px 0;
-    color: antiquewhite;
-
-     transition: 0.3s ease;
+     background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #30303d;
+    border-radius: 12px;
+    padding: 25px;
+    color: #ffffff;
+    transition: 0.3s;
 }
 
 .academica:hover {
@@ -129,63 +213,63 @@ a:hover {
     border-color: #a99be8;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-/*area de projetos*/
-.projetos {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px;
-    background-color: #292929;
-    border-radius: 12px;
-    min-height: 250px;
-    color: #f5f5f5;
 
-    transition: 0.3s ease;
+/*area de projetos*/
+
+#projetos {
+    padding: 40px 20px;
+    color: #ffffff;
+
 }
 
-.projetos:hover {
+#projetos h2 {
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.projeto {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #30303d;
+    border-radius: 12px;
+    padding: 25px;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.projeto h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.projeto p {
+    color: #a5a5b5;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.projeto span {
+    display: block;
+    color: #8888a0;
+    margin-bottom: 15px;
+}
+
+.projeto a {
+    color: #b4b4d0;
+    text-decoration: none;
+}
+    .projeto a:hover {
+    color: #ffffff;
+}    
+
+.projeto:hover {
     transform: translateY(-5px);
     border-color: #a99be8;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.aviso {
-    max-width: 450px;
-}
 
-.linha {
-    display: block;
-    width: 40px;
-    height: 2px;
-    background-color: #a99be8;
-    margin-bottom: 20px;
-}
-
-.aviso h2 {
-    font-size: 32px;
-    font-weight: 300;
-}
-
-.aviso strong {
-    font-weight: 700;
-}
-
-.aviso p {
-color: #9999a5;
-font-size: 15px;
-}
-
-.loader {
-    width: 45px;
-    height: 45px;
-    border: 2px solid #393943;
-    border-top-color: #a99be8;
-    border-radius: 50%;
-    animation: girar 1s linear infinite;
-}
-
-@keyframes girar {
-    to {
-        transform: rotate(360deg);
-    }
-}
